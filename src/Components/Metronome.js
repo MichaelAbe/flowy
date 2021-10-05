@@ -1,9 +1,11 @@
 import React from 'react'
+import {useState, useEffect} from 'react'
 
 export default function Metronome() {
+ 
 
-    let bpm = 100;
-    let playing = false;
+    const [bpm, setBpm] = useState([100])
+    const [playing, setPlaying] = useState([false])
 
 
     return (
