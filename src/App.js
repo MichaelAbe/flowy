@@ -1,12 +1,13 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Metronome from './Components/Metronome';
+import Key from './Components/Key';
 
 function App() {
   return (
     <div className="App">
-      Hello World
       <Metronome/>
+      <Key/>
     </div>
   );
 }
