@@ -14,11 +14,11 @@
   font-weight: 600;
 }
 
-.bpm-slider input {
+/* .bpm-slider input {
   width: 100%;
   margin: 10px;
   
-}
+} */
 
 
 .startstop {
@@ -31,14 +31,19 @@
 }
 
 .plusminus {
-  background: #ff671f;
-  padding: 1px;
+  background: #f5f6f8;
   width: 40px;
-  color: #fff;
+  color: #ff671f;
   font-size: xx-large;
   border-radius: 50%;
   font-weight: 300;
+  border: 0px;
 }
+.plusminus:hover {
+  background-color: #ff671f;
+  color: #f5f6f8;
+}
+
 
 .big-bpm {
   font-size: 100%;
@@ -48,4 +53,8 @@
 .bpm-small {
   font-size: medium;
   font-weight: 400;
+}
+
+.slider {
+  width: min-content;
 }

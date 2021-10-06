@@ -1,6 +1,9 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 
+
+
+
 export default function Metronome() {
  
 
@@ -43,24 +46,19 @@ export default function Metronome() {
         <span className='bpm-small'>BPM </span>
         <div> 
 
-        <button className='plusminus' onClick={handleBpmMinus}>-</button>
+        <span><button className='plusminus' onClick={handleBpmMinus}>-</button></span>
+        <span>
           <input
+            className='slider'
             type='range'
             min='60'
             max='180'
             value={bpm} 
             onChange={handleBpmChange}
             />
-        <button className='plusminus' onClick={handleBpmPlus}>+</button>
+        </span>
+        <span><button className='plusminus' onClick={handleBpmPlus}>+</button></span>
         </div>
-        
-             <input
-            type='box'
-            min='60'
-            max='180'
-            value={bpm} 
-            onChange={handleBpmChange}
-            />
         </div>
         <button className='startstop' onClick={handlePlay}>
           {playing ? 'Play' : 'Stop'}
