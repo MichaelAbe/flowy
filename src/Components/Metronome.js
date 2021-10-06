@@ -6,6 +6,8 @@ export default function Metronome() {
 
     const [bpm, setBpm] = useState([120])
     const [playing, setPlaying] = useState([false])
+    const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
+    const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
 
     const handleBpmChange = (e) => {
       e.preventDefault()
@@ -17,7 +19,10 @@ export default function Metronome() {
         alert('This is the start button')
     }
 
-    const handleBpmPlus = () => setBpm(parseInt(bpm) + 1)
+    const handleBpmPlus = () => {
+      setBpm(parseInt(bpm) + 1)
+      clickBase.play()
+    }
     const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
 
     return (
