@@ -2,7 +2,7 @@
 
 .App {
   font-family: 'Rubik', 'Italiano';
-  background-color: aqua;
+  background-color: #f5f6f8;
 }
 
 .metronome {
@@ -12,7 +12,6 @@
   padding: 30px;
   font-size: xx-large;
   font-weight: 600;
-  background-color: #f5f6f8;
 }
 
 .bpm-slider input {
@@ -21,11 +20,32 @@
   
 }
 
-.metronome button {
+
+.startstop {
   background: #ff671f;
   padding: 10px;
   width: 100px;
   color: #fff;
   font-size: 18px;
   border-radius: 8px;
+}
+
+.plusminus {
+  background: #ff671f;
+  padding: 1px;
+  width: 40px;
+  color: #fff;
+  font-size: xx-large;
+  border-radius: 50%;
+  font-weight: 300;
+}
+
+.big-bpm {
+  font-size: 100%;
+  font-weight: 200;
+}
+
+.bpm-small {
+  font-size: medium;
+  font-weight: 400;
 }

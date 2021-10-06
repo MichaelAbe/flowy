@@ -15,22 +15,35 @@ export default function Metronome() {
         setBpm(parseInt(bpm))
     }
 
-    const handleStart = (e) => {
-        alert('This is the start button')
+    const handlePlay = (e) => {
+      if(playing === true) {
+        clearInterval()
+        setPlaying(false)
+      } else {
+        setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+        setPlaying(true)
+      }
     }
 
     const handleBpmPlus = () => {
       setBpm(parseInt(bpm) + 1)
-      clickBase.play()
     }
     const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
+
+    const playClickBase = () => {
+      clickBase.play()
+    }
+    
+    // setInterval(playClickBase, 60 / parseInt(bpm) * 1000)
 
     return (
         <div className='metronome'>
         <div className='bpm-slider'>
-        <div>{bpm} BPM</div>
+        <span className='big-bpm'>{bpm} </span>
+        <span className='bpm-small'>BPM </span>
+        <div> 
+
         <button className='plusminus' onClick={handleBpmMinus}>-</button>
-        <button className='plusminus' onClick={handleBpmPlus}>+</button>
           <input
             type='range'
             min='60'
@@ -38,10 +51,23 @@ export default function Metronome() {
             value={bpm} 
             onChange={handleBpmChange}
             />
+        <button className='plusminus' onClick={handleBpmPlus}>+</button>
         </div>
-        <button className='startstop' onClick={handleStart}>
+        
+             <input
+            type='box'
+            min='60'
+            max='180'
+            value={bpm} 
+            onChange={handleBpmChange}
+            />
+        </div>
+        <button className='startstop' onClick={handlePlay}>
           {playing ? 'Play' : 'Stop'}
         </button>
       </div>
     )
 }
+
+
+
