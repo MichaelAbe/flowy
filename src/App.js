@@ -2,6 +2,7 @@
 import './App.css';
 import Metronome from './Components/Metronome';
 import Key from './Components/Key';
+import './index.css'
 
 function App() {
   return (
