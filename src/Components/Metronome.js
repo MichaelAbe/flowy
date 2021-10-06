@@ -17,13 +17,13 @@ export default function Metronome() {
     }
 
     const handleBpmPlus = () => setBpm(bpm + 1)
-    
+    const handleBpmMinus = () => setBpm(bpm + 1)
 
     return (
         <div className='metronome'>
         <div className='bpm-slider'>
         <div>{bpm} BPM</div>
-        <button className='plusminus'>-</button>
+        <button className='plusminus' onClick={handleBpmMinus}>-</button>
         <button className='plusminus' onClick={handleBpmPlus}>+</button>
           <input
             type='range'
