@@ -8,16 +8,17 @@ export default function Metronome() {
     const [playing, setPlaying] = useState([false])
 
     const handleBpmChange = (e) => {
+      e.preventDefault()
         let bpm = e.target.value
-        // bpm.setBpm({bpm})
+        setBpm(parseInt(bpm))
     }
 
     const handleStart = (e) => {
         alert('This is the start button')
     }
 
-    const handleBpmPlus = () => setBpm(bpm + 1)
-    const handleBpmMinus = () => setBpm(bpm + 1)
+    const handleBpmPlus = () => setBpm(parseInt(bpm) + 1)
+    const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
 
     return (
         <div className='metronome'>
@@ -28,9 +29,10 @@ export default function Metronome() {
           <input
             type='range'
             min='60'
-            max='240'
+            max='180'
             value={bpm} 
-            onChange={handleBpmChange}/>
+            onChange={handleBpmChange}
+            />
         </div>
         <button className='startstop' onClick={handleStart}>
           {playing ? 'Play' : 'Stop'}
