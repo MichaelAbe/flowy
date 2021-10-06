@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Rubik:wght@400;500;700&display=swap');
+
+.App {
+  font-family: 'Rubik', 'Italiano';
+  background-color: aqua;
+}
 
 .metronome {
   text-align: center;
@@ -7,7 +13,6 @@
   font-size: xx-large;
   font-weight: 600;
   background-color: #f5f6f8;
-  font-family: Rubik;
 }
 
 .bpm-slider input {
