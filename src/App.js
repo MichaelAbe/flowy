@@ -1,4 +1,4 @@
-
+import React from 'react'
 import './App.css';
 import Metronome from './Components/Metronome';
 import Key from './Components/Key';

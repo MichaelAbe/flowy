@@ -6,11 +6,11 @@ import {useState, useEffect} from 'react'
 
 export default function Metronome() {
  
-
-    const [bpm, setBpm] = useState([120])
-    const [playing, setPlaying] = useState([false])
-    const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
-    const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
+  const [bpm, setBpm] = useState([120])
+  const [tempo, setTempo] = useState([bpm])
+  const [playing, setPlaying] = useState([false])
+  const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
+  const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
 
     const handleBpmChange = (e) => {
       e.preventDefault()
@@ -19,14 +19,30 @@ export default function Metronome() {
     }
 
     const handlePlay = (e) => {
-      if(playing === true) {
-        clearInterval()
-        setPlaying(false)
-      } else {
-        setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
-        setPlaying(true)
-      }
+      // useEffect(() => {
+      //   const tempo = setInterval(() => {
+      //     setTempo(tempo => tempo + 1);
+      //   }, 1000);
+      //   return () => clearInterval(tempo);
+      // }, []);
+
+      // if(!tempo) {
+      // console.log(tempo)
+      // tempo = tempo + 1
+      // console.log(tempo)
+      // setBpm(parseInt(tempo))
+      // console.log(tempo)
+        // tempo = setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+      //   setPlaying(true)
+      // } else {
+        // clearInterval(tempo)
+      // }
     }
+
+    // const stopInterval = () => {
+    //   clearInterval(tempo)
+    //   tempo = null
+    // }
 
     const handleBpmPlus = () => {
       setBpm(parseInt(bpm) + 1)
@@ -58,6 +74,7 @@ export default function Metronome() {
             />
         </span>
         <span><button className='plusminus' onClick={handleBpmPlus}>+</button></span>
+        {/* <button onClick={stopInterval}>stop</button> */}
         </div>
         </div>
         <button className='startstop' onClick={handlePlay}>

@@ -24,10 +24,16 @@
 .startstop {
   background: #ff671f;
   padding: 10px;
-  width: 100px;
+  width:fit-content;
   color: #fff;
   font-size: 18px;
   border-radius: 8px;
+  border-width: 2px;
+  border-color: #ff671f;
+}
+.startstop:hover {
+  background-color: #ffa176;
+  color: #000000;
 }
 
 .plusminus {
@@ -37,7 +43,8 @@
   font-size: xx-large;
   border-radius: 50%;
   font-weight: 300;
-  border: 0px;
+  border: 4px;
+  border-color: #ff671f;
 }
 .plusminus:hover {
   background-color: #ff671f;
@@ -56,5 +63,96 @@
 }
 
 .slider {
-  width: min-content;
+  background-color: #f5f6f8;
+
+}
+
+input[type=range] {
+  height: 25px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 75%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #ffa176;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid #ff8750;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background:#ff671f;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background:  #ff671f;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #000000;
+  background: #ff671f;
+  border-radius: 1px;
+  border: 0px solid #000000;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid  #ff671f;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background:  #ff671f;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-fill-upper {
+  background:  #ff671f;
+  border: 0px solid #000000;
+  border-radius: 2px;
+  box-shadow: 0px 0px 0px #000000;
+}
+input[type=range]::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000000;
+  border: 1px solid  #ff671f;
+  height: 18px;
+  width: 18px;
+  border-radius: 25px;
+  background: #A1D0FF;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background:  #ff671f;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background:  #ff671f;
 }
