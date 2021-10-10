@@ -7,7 +7,7 @@ import {useState, useEffect} from 'react'
 export default function Metronome() {
  
   const [bpm, setBpm] = useState([120])
-  const [tempo, setTempo] = useState([bpm])
+  // const [tempo, setTempo] = useState([bpm])
   const [playing, setPlaying] = useState([false])
   const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
   const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
@@ -19,6 +19,13 @@ export default function Metronome() {
     }
 
     const handlePlay = (e) => {
+      if(playing) {
+        clearInterval(tempo)
+        setPlaying(false)
+      } else {
+        tempo = setInterval(playClickBase, (60 / bpm) * 1000)
+        setPlaying(true)
+      } playClickBase
       // useEffect(() => {
       //   const tempo = setInterval(() => {
       //     setTempo(tempo => tempo + 1);
