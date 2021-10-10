@@ -19,13 +19,16 @@ export default function Metronome() {
     }
 
     const handlePlay = (e) => {
-      if(playing) {
-        clearInterval(tempo)
-        setPlaying(false)
-      } else {
-        tempo = setInterval(playClickBase, (60 / bpm) * 1000)
-        setPlaying(true)
-      } playClickBase
+      setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+
+      // if(playing) {
+      //   clearInterval(tempo)
+      //   setPlaying(false)
+      // } else {
+      //   tempo = setInterval(playClickBase, (60 / bpm) * 1000)
+      //   setPlaying(true)
+      // } playClickBase
+
       // useEffect(() => {
       //   const tempo = setInterval(() => {
       //     setTempo(tempo => tempo + 1);
@@ -63,15 +66,16 @@ export default function Metronome() {
     // setInterval(playClickBase, 60 / parseInt(bpm) * 1000)
 
     return (
-        <div className='metronome'>
-        <div className='bpm-slider'>
-        <span className='big-bpm'>{bpm} </span>
-        <span className='bpm-small'>BPM </span>
+        <div id='metronome' className='metronome'>
+        <div id='bpm-slider' className='bpm-slider'>
+        <span id='big-bpm' className='big-bpm'>{bpm} </span>
+        <span id='bpm-small' className='bpm-small'>BPM </span>
         <div> 
 
-        <span><button className='plusminus' onClick={handleBpmMinus}>-</button></span>
+        <span><button id='minus' className='plusminus' onClick={handleBpmMinus}>-</button></span>
         <span>
           <input
+            id='slider'
             className='slider'
             type='range'
             min='60'
@@ -80,12 +84,12 @@ export default function Metronome() {
             onChange={handleBpmChange}
             />
         </span>
-        <span><button className='plusminus' onClick={handleBpmPlus}>+</button></span>
+        <span><button id='plus' className='plusminus' onClick={handleBpmPlus}>+</button></span>
         {/* <button onClick={stopInterval}>stop</button> */}
         </div>
         </div>
-        <button className='startstop' onClick={handlePlay}>
-          {playing ? 'Play' : 'Stop'}
+        <button id='startstop' className='startstop' onClick={handlePlay}>
+          {playing ? 'PLAY' : 'STOP'}
         </button>
       </div>
     )
