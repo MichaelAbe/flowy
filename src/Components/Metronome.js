@@ -19,7 +19,13 @@ export default function Metronome() {
     }
 
     const handlePlay = (e) => {
-      setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+      if (!playing) {
+        setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+      setPlaying(true)
+    } else {
+      setPlaying(false)
+    }
+
 
       // if(playing) {
       //   clearInterval(tempo)
