@@ -6,9 +6,9 @@ import {useState, useEffect} from 'react'
 
 export default function Metronome() {
  
-  const [bpm, setBpm] = useState([120])
+  const [bpm, setBpm] = useState(120)
   // const [tempo, setTempo] = useState([bpm])
-  const [playing, setPlaying] = useState([false])
+  const [playing, setPlaying] = useState(false)
   const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
   const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
 
@@ -95,7 +95,7 @@ export default function Metronome() {
         </div>
         </div>
         <button id='startstop' className='startstop' onClick={handlePlay}>
-          {playing ? 'PLAY' : 'STOP'}
+          {playing ? 'STOP' : 'PLAY'}
         </button>
       </div>
     )
