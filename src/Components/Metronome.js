@@ -1,10 +1,13 @@
+import { SpaceBar } from "@mui/icons-material";
 import React from "react";
 import { useState, useEffect } from "react";
 
 export default function Metronome() {
-  const [bpm, setBpm] = useState(120);
+  const [bpm, setBpm] = useState(120)
+  let [beat, setBeat] = useState(0)
+  let [timeSignature, setTimeSignature] = useState(4)
   let [tempo, setTempo] = useState(bpm);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(false)
   const clickBase = new Audio(
     "http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav"
   );
@@ -12,62 +15,58 @@ export default function Metronome() {
     "http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV"
   );
 
-  const spaceFunctionality = () => {
+  
     useEffect(() => {
-      document.addEventListener("keydown", alert("hello"));
-    });
-  };
+      spaceBar()
+    }, []);
+ 
+    const spaceBar = () => {
+      document.addEventListener('keydown', (e) => {
+        if (e.code === 32) {
+          playMeasure()
+        }
+      }) 
+    }
 
   const handleBpmChange = (e) => {
-    e.preventDefault();
-    let bpm = e.target.value;
-    setBpm(parseInt(bpm));
+    e.preventDefault()
+    let bpm = e.target.value
+    setBpm(parseInt(bpm))
   };
 
+  const playMeasure = () => {
+   if(beat === 0) {
+     playClickAccent()
+   } else {
+     playClickBase()
+   }
+   setBeat(beat + 1)
+   console.log(beat)
+  }
+
+  // const counterTest = () => {
+  //   setBeat(beat = 1)
+  //   console.log(beat)
+  // }
+  
   const handlePlay = (e) => {
     if (!playing) {
-      setTempo(setInterval(playClickBase, (60 / parseInt(bpm)) * 1000));
+      setTempo(setInterval(playMeasure, (60 / parseInt(bpm)) * 1000));
       setPlaying(true);
     } else {
       clearInterval(tempo);
       setPlaying(false);
     }
-    // if(playing) {
-    //   clearInterval(tempo)
-    //   setPlaying(false)
-    // } else {
-    //   tempo = setInterval(playClickBase, (60 / bpm) * 1000)
-    //   setPlaying(true)
-    // } playClickBase
-
-    // useEffect(() => {
-    //   const tempo = setInterval(() => {
-    //     setTempo(tempo => tempo + 1);
-    //   }, 1000);
-    //   return () => clearInterval(tempo);
-    // }, []);
-
-    // if(!tempo) {
-    // console.log(tempo)
-    // tempo = tempo + 1
-    // console.log(tempo)
-    // setBpm(parseInt(tempo))
-    // console.log(tempo)
-    // tempo = setInterval(playClickBase, 60 / parseInt(bpm) * 1000)
-    //   setPlaying(true)
-    // } else {
-    // clearInterval(tempo)
-    // }
   };
 
-  const handleBpmPlus = () => {
-    setBpm(parseInt(bpm) + 1);
-  };
-  const handleBpmMinus = () => setBpm(parseInt(bpm) - 1);
+  const handleBpmPlus = () => setBpm(parseInt(bpm) + 1)
+  
+  const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
 
-  const playClickBase = () => {
-    clickBase.play();
-  };
+  const playClickBase = () => clickBase.play()
+
+  const playClickAccent = () => clickAccent.play()
+  
 
   // spaceFunctionality()
 
@@ -108,6 +107,8 @@ export default function Metronome() {
       <button id="startstop" className="startstop" onClick={handlePlay}>
         {playing ? "STOP" : "PLAY"}
       </button>
+      <div id='timeSignature'>{timeSignature ? "4/4" : "6/8"}</div>
+      <div id='test'>{beat}</div>
     </div>
   );
 }
