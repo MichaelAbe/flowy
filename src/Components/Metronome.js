@@ -5,77 +5,76 @@ import {useState, useEffect} from 'react'
 
 
 export default function Metronome() {
- 
+  
+  
   const [bpm, setBpm] = useState(120)
   let [tempo, setTempo] = useState(bpm)
   const [playing, setPlaying] = useState(false)
   const clickBase = new Audio('http://www.denhaku.com/r_box/sr16/sr16perc/hi%20block.wav')
   const clickAccent = new Audio('http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV')
-
-
-    const handleBpmChange = (e) => {
-      e.preventDefault()
-        let bpm = e.target.value
-        setBpm(parseInt(bpm))
-    }
-
-    const handlePlay = (e) => {
-      if (!playing) {
+  
+  const spaceFunctionality = () => {
+    useEffect(() => {
+      document.addEventListener('keydown', alert('hello'))
+    })
+  }
+  
+  const handleBpmChange = (e) => {
+    e.preventDefault()
+    let bpm = e.target.value
+    setBpm(parseInt(bpm))
+  }
+  
+  const handlePlay = (e) => {
+    if (!playing) {
       setTempo(setInterval(playClickBase, 60 / parseInt(bpm) * 1000)) 
       setPlaying(true)
     } else {
       clearInterval(tempo)
       setPlaying(false)
-
     }
-
-
-      // if(playing) {
+    // if(playing) {
       //   clearInterval(tempo)
       //   setPlaying(false)
       // } else {
-      //   tempo = setInterval(playClickBase, (60 / bpm) * 1000)
-      //   setPlaying(true)
-      // } playClickBase
-
-      // useEffect(() => {
-      //   const tempo = setInterval(() => {
-      //     setTempo(tempo => tempo + 1);
-      //   }, 1000);
-      //   return () => clearInterval(tempo);
-      // }, []);
-
-      // if(!tempo) {
-      // console.log(tempo)
-      // tempo = tempo + 1
-      // console.log(tempo)
-      // setBpm(parseInt(tempo))
-      // console.log(tempo)
-        // tempo = setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
-      //   setPlaying(true)
-      // } else {
-        // clearInterval(tempo)
-      // }
-    }
-
-    // const stopInterval = () => {
-    //   clearInterval(tempo)
-    //   tempo = null
-    // }
-
-    const handleBpmPlus = () => {
-      setBpm(parseInt(bpm) + 1)
-    }
-    const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
-
-    const playClickBase = () => {
-      clickBase.play()
-    }
-    
-    // setInterval(playClickBase, 60 / parseInt(bpm) * 1000)
-
-    return (
-        <div id='metronome' className='metronome'>
+        //   tempo = setInterval(playClickBase, (60 / bpm) * 1000)
+        //   setPlaying(true)
+        // } playClickBase
+        
+        // useEffect(() => {
+          //   const tempo = setInterval(() => {
+            //     setTempo(tempo => tempo + 1);
+            //   }, 1000);
+            //   return () => clearInterval(tempo);
+            // }, []);
+            
+            // if(!tempo) {
+              // console.log(tempo)
+              // tempo = tempo + 1
+              // console.log(tempo)
+              // setBpm(parseInt(tempo))
+              // console.log(tempo)
+              // tempo = setInterval(playClickBase, 60 / parseInt(bpm) * 1000) 
+              //   setPlaying(true)
+              // } else {
+                // clearInterval(tempo)
+                // }
+              }
+              
+              
+              const handleBpmPlus = () => {
+                setBpm(parseInt(bpm) + 1)
+              }
+              const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
+              
+              const playClickBase = () => {
+                clickBase.play()
+              }
+              
+              spaceFunctionality()
+              
+              return (
+                <div id='metronome' className='metronome'>
         <div id='bpm-slider' className='bpm-slider'>
         <span id='big-bpm' className='big-bpm'>{bpm} </span>
         <span id='bpm-small' className='bpm-small'>BPM </span>
