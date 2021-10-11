@@ -1,4 +1,3 @@
-import { SpaceBar } from "@mui/icons-material";
 import React from "react";
 import { useState, useEffect } from "react";
 
@@ -15,18 +14,18 @@ export default function Metronome() {
     "http://drbraukmann.com/DESN275/soundLibrary/toolsBangs/tapOnWood.WAV"
   );
 
-  
-    useEffect(() => {
-      spaceBar()
-    }, []);
- 
-    const spaceBar = () => {
-      document.addEventListener('keydown', (e) => {
-        if (e.code === 32) {
-          playMeasure()
-        }
-      }) 
-    }
+  useEffect(() => {
+    spaceBar()
+  }, []);
+
+  const spaceBar = () => {
+    document.addEventListener('keydown', (e) => {
+      if (e.key == ' ') {
+        handlePlay() 
+        console.log("hello")
+      }
+    }) 
+  }
 
   const handleBpmChange = (e) => {
     e.preventDefault()
@@ -63,10 +62,13 @@ export default function Metronome() {
   
   const handleBpmMinus = () => setBpm(parseInt(bpm) - 1)
 
-  const playClickBase = () => clickBase.play()
+  const playClickBase = () => {
+    clickBase.play()
+  };
 
-  const playClickAccent = () => clickAccent.play()
-  
+  const playClickAccent = () => {
+    clickAccent.play()
+  }
 
   // spaceFunctionality()
 
