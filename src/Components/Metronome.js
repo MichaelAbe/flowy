@@ -65,7 +65,6 @@ export default function Metronome() {
      playClickBase()
    }
      setBeat(beat + 1)  
-  //  console.log(beat)
   }
 
   

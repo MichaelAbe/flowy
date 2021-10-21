@@ -156,3 +156,13 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background:  #ff671f;
 }
+
+.time {
+  background-color: aqua;
+  text-align: center;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 30px;
+  font-size: xx-large;
+  font-weight: 600;
+}
