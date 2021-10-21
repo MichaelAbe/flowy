@@ -1,9 +1,11 @@
 import React from 'react'
+import Dropdown from './Dropdown'
 
 export default function Time() {
     return (
         <div>
-            This is the time Component
+            <Dropdown/>
+            d
         </div>
     )
 }
