@@ -4,7 +4,7 @@ export default function Key() {
     return (
       <div>
         <span>
-          <select name="keyselect" id="keyselect" className="key">
+          <select name="keyselect" id="keyselect" className="keyselect">
             <option value="A">A</option>  
             <option value="B">B</option>
             <option value="C">C</option>
