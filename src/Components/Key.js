@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState, useEffect } from "react";
 
 export default function Key() {
+  const [key, setKey] = useState("C")
+
+  const handleKeyChange = (e) => {
+    e.preventDefault()
+    let key = e.target.value
+    setKey(key)
+  };
+  
+
     return (
       <div>
         <span>

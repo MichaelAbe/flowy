@@ -8,7 +8,7 @@ export default function Time() {
             <Dropdown/>
 
             </span>
-            d
+        
         </div>
     )
 }
