@@ -14,7 +14,7 @@ export default function Key() {
     return (
       <div>
         <span>
-          <select name="keyselect" id="keyselect" className="keyselect">
+          <select name="keyselect" id="keyselect" className="keyselect" onClick={handleKeyChange}>
             <option value="A">A</option>  
             <option value="B">B</option>
             <option value="C">C</option>
@@ -31,6 +31,7 @@ export default function Key() {
             <option value="Bb">Bb</option>
           </select>
         </span>
+        key={key}
       </div>
     );
 }
