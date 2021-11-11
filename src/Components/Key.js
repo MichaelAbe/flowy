@@ -8,7 +8,7 @@ export default function Key() {
     e.preventDefault()
     let key = e.target.value
     setKey(key)
-  };
+  }
   
 
     return (
