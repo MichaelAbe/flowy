@@ -9,8 +9,8 @@ function App() {
   return (
     <div className="App">
       <Metronome/>
-      <Time/>
-      <KeySig/>
+      {/* <Time/>
+      <KeySig/> */}
     </div>
   );
 }

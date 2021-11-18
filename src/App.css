@@ -158,21 +158,25 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .time {
-  /* background-color: rgb(255, 255, 255); */
+  border: 0px solid #000000;
+  border-radius: 25px;
+  background-color: #f5f6f8;
   text-align: center;
   max-width: 375px;
   margin: 0 auto;
   padding: 30px;
   font-size: xx-large;
-  font-weight: 600;
+  font-weight: 350;
 }
 
 .keyselect {
-  background-color: aqua;
+  border: 0px solid #000000;
+  border-radius: 25px;
+  background-color: #f5f6f8;
   text-align: center;
   max-width: 375px;
   margin: 0 auto;
   padding: 30px;
   font-size: xx-large;
-  font-weight: 600;
+  font-weight: 350;
 }
