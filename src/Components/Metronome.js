@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Dropdown from "./Dropdown";
+import KeySig from "./KeySig"
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(120)
@@ -138,6 +139,7 @@ export default function Metronome() {
       </button>
 
       <Dropdown/>
+      <KeySig/>
       <div id='timeSignature'>{timeSignature ? "4/4" : "6/8"}</div>
       <div id='test'>{beat}</div>
     </div>

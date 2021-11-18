@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Metronome from './Components/Metronome';
-import Key from './Components/Key';
+import KeySig from './Components/KeySig';
 import './index.css'
 import Time from './Components/Time';
 
@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <Metronome/>
       <Time/>
-      <Key/>
+      <KeySig/>
     </div>
   );
 }
