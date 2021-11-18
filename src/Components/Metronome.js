@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Dropdown from "./Dropdown";
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(120)
@@ -135,6 +136,8 @@ export default function Metronome() {
       <button id="startstop" className="startstop" onClick={handlePlay}>
         {playing ? "STOP" : "PLAY"}
       </button>
+
+      <Dropdown/>
       <div id='timeSignature'>{timeSignature ? "4/4" : "6/8"}</div>
       <div id='test'>{beat}</div>
     </div>
