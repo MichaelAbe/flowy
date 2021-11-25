@@ -3,7 +3,7 @@ import Input from './Input'
 
 export default function Song() {
     return (
-        <div>
+        <div className="song">
             This is the song component
             <Input/>
         </div>

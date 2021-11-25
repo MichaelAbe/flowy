@@ -190,3 +190,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #ffa176;
   color: #000000;
 }
+
+.song {
+  font-weight: lighter;
+}
