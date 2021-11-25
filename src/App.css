@@ -182,7 +182,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .time:hover {
-  font-weight: 500;
   background-color: #ffa176;
   color: #000000;
 }
