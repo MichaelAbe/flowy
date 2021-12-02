@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Dropdown from "./Dropdown";
 import KeySig from "./KeySig"
 import Song from "./Song";
+import Playlist from "./Playlist";
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(120)
@@ -139,6 +140,7 @@ export default function Metronome() {
         {playing ? "STOP" : "PLAY"}
       </button>
 
+      <Playlist></Playlist>
       <Song></Song>
       <Dropdown/>
       <KeySig/>
