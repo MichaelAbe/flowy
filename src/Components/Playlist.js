@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState } from 'react'
 
 export default function Playlist() {
+
+    const [playlist, setPlaylist] = useState('')
+
+    const handePlaylistChange = (e) => {
+        e.preventDefault()
+        let playlist = e.target.value
+        setPlaylist(playlist)
+ }
+
     return (
       <div>
         Add to Playlist:{" "}
@@ -9,7 +19,7 @@ export default function Playlist() {
             name="playList"
             id="playList"
             className="time"
-            
+            onClick={handePlaylistChange}
           >
               <option value="Practice">Practice</option>  
               <option value="Preformance">Preformance</option>
@@ -17,6 +27,7 @@ export default function Playlist() {
           </select>
           
         </span>
+        Playlist = {playlist}
       </div>
     );
 }
@@ -32,3 +43,11 @@ export default function Playlist() {
 time={time}
 </span>
 </div> */}
+
+// const [time, setTime] = useState(4)
+
+// const handleTimeChange = (e) => {
+//   e.preventDefault()
+//   let time = e.target.value
+//   setTime(time)
+// }
