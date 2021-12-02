@@ -6,13 +6,14 @@ export default function Playlist() {
         Add to Playlist:{" "}
         <span>
           <select
-            name="selectList"
-            id="selectList"
+            name="playList"
+            id="playList"
             className="time"
             
           >
-              <option value="4">4/4</option>  <option value="3">3/4</option>
-            <option value="6">6/8</option>
+              <option value="Practice">Practice</option>  
+              <option value="Preformance">Preformance</option>
+              <option value="Other">Other</option>
           </select>
           
         </span>
@@ -23,7 +24,7 @@ export default function Playlist() {
 
 {/* <div>
 <span>
-<select name="selectList" id="selectList" className="time" onClick={handleTimeChange}>
+<select name="playList" id="playList" className="time" onClick={handleTimeChange}>
   <option value="4">4/4</option> {" "}
 <option value="3">3/4</option>
 <option value="6">6/8</option>
