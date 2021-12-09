@@ -2,22 +2,29 @@ import React from "react";
 import { useState } from "react";
 
 export default function Style() {
-  const [style, setStyle] = useState("");
+  const [style, setStyle] = useState("N/A")
+
+  const handleStyleChange = (e) => {
+    e.preventDefault()
+    let style = e.target.value
+    setStyle(style)
+  }
 
   return (
     <div>
       Select Style:{""}
       <span>
         <select
-          name="playList"
-          id="playList"
+          name="style"
+          id="style"
           className="time"
-          onClick={handePlaylistChange}
+          onClick={handleStyleChange}
         >
           <option value="Straight">Straight</option> 
           <option value="Swing">Swing</option>
         </select>
       </span>
+      Style = {style}
     </div>
   );
 }
