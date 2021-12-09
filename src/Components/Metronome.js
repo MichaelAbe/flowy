@@ -4,6 +4,7 @@ import Dropdown from "./Dropdown";
 import KeySig from "./KeySig"
 import Song from "./Song";
 import Playlist from "./Playlist";
+import Style from "./Style";
 
 export default function Metronome() {
   const [bpm, setBpm] = useState(120)
@@ -146,6 +147,7 @@ export default function Metronome() {
       <KeySig/>
       <div id='timeSignature'>{timeSignature ? "4/4" : "6/8"}</div>
       <div id='test'>{beat}</div>
+      <Style/>
     </div>
   );
 }
