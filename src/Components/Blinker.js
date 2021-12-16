@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 export default function Blinker() {
     
-    const [blink, useBlink] = useState(false)
+    const [blink, setBlink] = useState(false)
     const [counter, useCounter] = useState(0)
 
     const blinking = () => {
@@ -13,8 +13,10 @@ export default function Blinker() {
 
 
         <div className='blinker'>
-            Blinker
-            {counter}
+            The blinker is currenty at {blink}
+            <button onClick={() => setBlink(blink + 1)}>
+                
+            </button>
         </div>
     )
 }
